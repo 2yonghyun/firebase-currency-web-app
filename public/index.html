@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- Firebase -->
+    <script defer src="/__/firebase/7.16.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/7.16.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- Vuejs and chartjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+    <script src="https://unpkg.com/vue-chartjs@2.5.7-rc3/dist/vue-chartjs.full.min.js"></script>
+
+  </head>
+  <body>
+    <h1>Currency Monitoring App</h1>
+    <div id="grid">
+      <ol>
+        <li><a href="#" onclick="updateAWeekData('usd');">USD</a></li>
+        <li><a href="#" onclick="updateAWeekData('jpy');">JPY(100yen)</a></li>
+        <li><a href="#" onclick="updateAWeekData('eur');">EUR</a></li>
+        <li><a href="#" onclick="updateAWeekData('cny');">CNY</a></li>
+      </ol>
+      <div id="app">
+        <line-chart :data="dataChart"></line-chart>
+      </div>
+      
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
