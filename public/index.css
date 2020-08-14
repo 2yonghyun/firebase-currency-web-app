@@ -32,6 +32,7 @@ ol {
         border-right: none;
     }
     h1 {
+        font-size: 25px;
         border-bottom: none;
     }
 }
