@@ -24,10 +24,10 @@
     <h1>Currency Monitoring App</h1>
     <div id="grid">
       <ol>
-        <li><a href="#" onclick="updateAWeekData('usd');return false;">USD</a></li>
-        <li><a href="#" onclick="updateAWeekData('jpy');return false;">JPY(100yen)</a></li>
-        <li><a href="#" onclick="updateAWeekData('eur');return false;">EUR</a></li>
-        <li><a href="#" onclick="updateAWeekData('cny');return false;">CNY</a></li>
+        <li><a href="#" onclick="updateAWeekData('usd', '#f87979');return false;">USD</a></li>
+        <li><a href="#" onclick="updateAWeekData('jpy', '#7979F8');return false;">JPY(100yen)</a></li>
+        <li><a href="#" onclick="updateAWeekData('eur', '#79F879');return false;">EUR</a></li>
+        <li><a href="#" onclick="updateAWeekData('cny', '#F8B879');return false;">CNY</a></li>
       </ol>
       <div id="app">
         <line-chart :data="dataChart"></line-chart>

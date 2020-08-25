@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
   updateAWeekData('usd')
 })
 
-function updateAWeekData(currency) {
+function updateAWeekData(currency, color) {
   var aWeekFullDataRef = firebase.database().ref('/currencies').limitToLast(7)
   aWeekFullDataRef.on('value', function(snapshot) {
     aWeekFullData = snapshot.val()
     updateAWeekDateList(aWeekFullData)
     updateAWeekValueList(aWeekFullData, currency)
     updateMinAndMaxValueFromList(aWeekValueList)
-    vm.changeData()
+    vm.changeData(color)
   })
 }
 
@@ -88,13 +88,13 @@ var vm = new Vue({
     dataChart: []
   },
   methods: {
-    changeData: function() {
+    changeData: function(color = '#f87979') {
       this.dataChart = {
         labels: aWeekDateList,
         datasets: [
           {
             label: "WON",
-            backgroundColor: "#f87979",
+            backgroundColor: color,
             data: aWeekValueList
           }
         ]
