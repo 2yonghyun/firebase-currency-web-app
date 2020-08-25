@@ -18,6 +18,7 @@ function updateAWeekData(currency, color) {
     updateMinAndMaxValueFromList(aWeekValueList)
     vm.changeData(color)
   })
+  event.preventDefault()
 }
 
 function updateAWeekDateList(aWeekFullData) {
