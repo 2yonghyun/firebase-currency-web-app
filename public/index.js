@@ -16,6 +16,7 @@ function updateAWeekData(currency) {
     updateAWeekDateList(aWeekFullData)
     updateAWeekValueList(aWeekFullData, currency)
     updateMinAndMaxValueFromList(aWeekValueList)
+    vm.changeData()
   })
 }
 
@@ -77,6 +78,27 @@ Vue.component("line-chart", {
     data: function() {
       this._chart.destroy()
       this.renderLineChart()
+    }
+  }
+})
+
+var vm = new Vue({
+  el: "#app",
+  data: {
+    dataChart: []
+  },
+  methods: {
+    changeData: function() {
+      this.dataChart = {
+        labels: aWeekDateList,
+        datasets: [
+          {
+            label: "WON",
+            backgroundColor: "#f87979",
+            data: aWeekValueList
+          }
+        ]
+      }
     }
   }
 })
