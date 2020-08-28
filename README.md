@@ -6,4 +6,5 @@ This is a currency monitoring web app.
 - Firebase Hosting
 - Firebase Realtime Database
 - Vue.js
+- vue-chartjs
 
